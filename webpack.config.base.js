@@ -17,6 +17,33 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.styl$/i,
+        use: [
+          "style-loader",
+          "css-loader",
+          "stylus-loader"
+        ]
+      },
+      {
+        test: /\.less$/i,
+        use: [
+          {
+            loader: "style-loader",
+          },
+          {
+            loader: "css-loader",
+          },
+          {
+            loader: "less-loader",
+            options: {
+              lessOptions: {
+                strictMath: true,
+              },
+            },
+          },
+        ],
+      },
+      {
         test: /\.s[ac]ss$/i,
         use: [
           "style-loader",
@@ -29,6 +56,7 @@ module.exports = {
           },
         ],
       },
+      
     ],
   },
 };
