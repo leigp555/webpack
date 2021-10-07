@@ -15,6 +15,20 @@ module.exports = {
     }),
   ],
   module: {
-    rules: [],
+    rules: [
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          "style-loader",
+          "css-loader",
+          {
+            loader:"sass-loader",
+            options:{
+               implementation:require('dart-sass')
+            },
+          },
+        ],
+      },
+    ],
   },
 };
