@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -27,7 +27,7 @@ module.exports = {
       {
         test: /\.css$/i,
         //二选一要么css 加载到内存，要么css抽离成文件
-        use: ["style-loader", "css-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
     ],
   },
