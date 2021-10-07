@@ -8,7 +8,6 @@ rm -rf *.json *.js yarn.lock &&
 mv dist/* ./ &&
 rm -rf dist &&
 git add . &&
-git commit -m update &&
-git push --set-upstream origin x &&
-git checkout main
-
+git commit -m update 
+# git push --set-upstream origin x &&
+# git checkout main
